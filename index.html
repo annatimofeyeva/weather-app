@@ -1,8 +1,8 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-   <script src="js/weather-interface.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+    <script src="js/weather-interface.js"></script>
     <title>Weather</title>
 
   </head>
@@ -11,9 +11,14 @@
       <h1>Get Weather Conditions From Anywhere!</h1>
       <label for="location">Enter a location:</label>
       <input id="location" type="text">
-      <button class="btn-success" id="weather-location">Get Current Humidity!</button>
+      <button class="btn-success" id="weather-humidity">Get Current Humidity!</button>
       <button class="btn-success" id="kelvin-temp">Get Current Temperature!</button>
-      <div class="showWeather"></div>
+      <button class="btn-success" id="fahrenheit-temp">Convert Temperature to Fahrenheit!</button>
+      <button class="btn-success" id="celsius-temp">Convert Temperature to Celsius!</button>
+      <div id="showHumidity"></div>
+      <div id="showKelvinTemp"></div>
+      <div id="showFahrenheitTemp"></div>
+      <div id="showCelciusTemp"></div>
       </div>
   </body>
 </html>
