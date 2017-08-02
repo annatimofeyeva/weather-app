@@ -1,5 +1,5 @@
 var apiKey = require('./../.env').apiKey;
-//var Weather = require ('./../js/weather.js').weatherModule;
+var Weather = require ('./../js/weather.js').weatherModule;
 
 $(document).ready(function() {
   $('#weather-humidity').click(function() {
@@ -9,28 +9,28 @@ $(document).ready(function() {
     //alert(city);
   });
     $('#kelvin-temp').click(function() {
-      var citytemp= $('#location').val();
+      var city= $('#location').val();
         //alert(citytemp);
       $('#location').val("");
       $('#showKelvinTemp').text("Kelvin Temperature in " + city + " is " + response.main.temp + " degrees.");
     });
 
     $('#fahrenheit-temp').click(function() {
-      var citytemp= $('#location').val();
+      var city= $('#location').val();
         //alert(citytemp);
       $('#location').val("");
       var simpleWeather = new Weather("summer");
-      var fahrenheitTemp = simpleWeather.toFahrenheit(weatherLocation);
+      var fahrenheitTemp = simpleWeather.toFahrenheit(city);
     $('#showFahrenheitTemp').text("Fahrenheit Temperature in " + city +  " is " + fahrenheitTemp  + " degrees.");
     });
 
 
     $('#celsius-temp').click(function() {
-      var citytemp= $('#location').val();
+      var city = $('#location').val();
         //alert(citytemp);
       $('#location').val("");
       var simpleWeather = new Weather("summer");
-      var celsiusTemp = simpleWeather.toCelsius(weatherLocation);
+      var celsiusTemp = simpleWeather.toCelsius(city);
     $('#showCelsiusTemp').text("Celsius Temperature in " + city +  " is " + celsiusTemp + " degrees.");
     });
    });
