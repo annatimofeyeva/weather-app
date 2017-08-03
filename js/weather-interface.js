@@ -1,4 +1,22 @@
-var apiKey = "4482eb798ce5a8462165873ffe2e0dff";
+var Weather = require('./../js/weather.js').weatherModule;
+
+var displayHumidity = function(city, humidityData) {
+  $('#showHumidity').text("The humidity in " + city + " is " + humidityData + "%");
+}
+
+$(document).ready(function() {
+  var currentWeatherObject = new Weather();
+  $('#weather-humidity').click(function() {
+    var city = $('#location').val();
+    $('#location').val("");
+    currentWeatherObject.getWeather(city, displayHumidity);
+  });
+});
+
+
+
+
+/*var apiKey = "4482eb798ce5a8462165873ffe2e0dff";
 
 //var apiKey = require('./../.env').apiKey;
 var Weather = require ('./../js/weather.js').weatherModule;
