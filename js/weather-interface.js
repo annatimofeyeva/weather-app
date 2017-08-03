@@ -16,7 +16,6 @@ var displayCelsiusTemp = function(city, tempData) {
   $('#showCelsiusTemp').text("Celsius Temperature in  " + city + " is " + convertToCelsius(tempData) + "  degrees.");
 };
 
-
 var convertToFahrenheit = function(kelvins) {
   var fahrenheit = 9/5*(kelvins - 273) + 32;
   return Math.floor(fahrenheit);
@@ -27,9 +26,32 @@ var convertToCelsius = function(kelvins) {
   return Math.floor(celsius);
 }
 
+var getTempIntl = function(location, tempData) {
+  $('#'+location).text(convertToCelsius(tempData));
+};
+
+
+var majorCities = ["Tokyo", "Chelyabinsk", "Seattle", "Moscow", "StPetersburg"];
 
 $(document).ready(function() {
   var currentWeatherObject = new Weather();
+
+  majorCities.forEach(function(location){
+      $('#citiesTemp').append("<div class='intl-box'> "
+      + location +
+      "<br>" + "<span id='"
+      + location + "'" +
+      currentWeatherObject.getCelsiusTemp(location, getTempIntl) + "</span>" +
+      "</div>");
+    });
+
+
+
+
+
+
+
+
   $('#weather-humidity').click(function() {
     var city = $('#location').val();
     $('#location').val("");
