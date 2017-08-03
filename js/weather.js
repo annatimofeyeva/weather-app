@@ -27,33 +27,14 @@ Weather.prototype.getFahrenheitTemp = function(city, displayFahrenheitTemp) {
   });
 };
 
-// Weather.prototype.getCTemp = function(city, displayKelvinTemp) {
-//   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response) {
-//     var cel =  displayKelvinTemp(city, response.main.temp) - 273;
-//   }).fail(function(error) {
-//     $('#showCelsiusTemp').text(error.responseJSON.message);
-//   });
-// };
-//
 
-exports.weatherModule = Weather;
-
-
-/*function Weather(localWeather){
-  this.localWeather = localWeather;
-}
-
-Weather.prototype.toFahrenheit = function(city){
-  var kelvinTempInput = response.main.temp;
-  var fahrenheitTemp = (kelvinTempInput * 1.8) - 459.67;
-  return fahrenheitTemp;
-  };
-
-Weather.prototype.toCelsius = function(city){
-  var kelvinTempInput = response.main.temp;
-  var celsiusTemp =  kelvinTempInput - 273.15;
-  return celsiusTemp;
+Weather.prototype.getCelsiusTemp = function(city, displayCelsiusTemp) {
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response) {
+    displayCelsiusTemp(city, response.main.temp);
+  }).fail(function(error) {
+    $('#showCelsiusTemp').text(error.responseJSON.message);
+  });
 };
 
+
 exports.weatherModule = Weather;
-*/
