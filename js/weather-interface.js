@@ -45,13 +45,6 @@ $(document).ready(function() {
       "</div>");
     });
 
-
-
-
-
-
-
-
   $('#weather-humidity').click(function() {
     var city = $('#location').val();
     $('#location').val("");

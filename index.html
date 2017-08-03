@@ -1,13 +1,14 @@
 <html>
   <head>
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Weather</title>
 
   </head>
   <body>
-    <div class="container">
+    <div class="well">
       <h1>Get Weather Conditions From Anywhere!</h1>
       <label for="location">Enter a location:</label>
       <input id="location" type="text">
@@ -15,13 +16,11 @@
       <button class="btn-success" id="kelvin-temp">Get Temperature in Kelvin!</button>
       <button class="btn-success" id="fahrenheit-temp">Convert Temperature to Fahrenheit!</button>
       <button class="btn-success" id="celsius-temp">Convert Temperature to Celsius!</button>
-
       <div id="showHumidity"></div>
       <div id="showKelvinTemp"></div>
       <div id="showFahrenheitTemp"></div>
       <div id="showCelsiusTemp"></div>
-
       <div id="citiesTemp"></div>
       </div>
-  </body>
+    </body>
 </html>
