@@ -6,6 +6,8 @@
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Weather</title>
 
+
+
   </head>
   <body>
     <div class="well">
@@ -22,5 +24,30 @@
       <div id="showCelsiusTemp"></div>
       <div id="citiesTemp"></div>
       </div>
+
+
+
+      <h3>Google Maps Marker for Seattle:</h3>
+          <div id="map"></div>
+          <script>
+            function initMap() {
+              var uluru = {lat: 47.608013, lng: -122.335167
+};
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+              });
+              var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+              });
+            }
+          </script>
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpB9Q9wfKbEh5d8tmgAm0oEWJmOUlrTM8&callback=initMap">
+          </script>
+
+
+
     </body>
 </html>

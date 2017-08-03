@@ -22,3 +22,9 @@ $citiesTemp-width : 17%;
    grid-template-rows: 50px;
    grid-gap: 3%;
   }
+
+  #map {
+    height: 50%;
+    width: 50%;
+    margin-left: 100px
+  }
