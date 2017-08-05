@@ -72,7 +72,7 @@ $(document).ready(function() {
 
     });
 
-
+// gmaps find location functionality
     $('#locateUser').click(locateUser);
     });
 

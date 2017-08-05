@@ -2,29 +2,108 @@
 $yellow : #ffff66;
 $citiesTemp-width : 17%;
 
+h1{
+  color: blue;
+}
 .well {
-  background-image: url("https://vmcdn.ca/f/files/sudbury/sun-sky-2017.jpg;w=630");
+  background-image: url("http://exchangedownloads.smarttech.com/public/content/c7/c7b7d2f6-0e68-41bc-b320-063ae2783f69/previews/medium/0001.png");
+  //background-image: url("https://vmcdn.ca/f/files/sudbury/sun-sky-2017.jpg;w=630");
   border: 3px solid black;
+  border-color: lightblue;
   padding: 40px 80px;
-
+  margin-top: 80px;
+  width: 90%;
+  margin-left: 100px;
 }
 
+#location{
+  font-size: 18px;
+}
 .btn-success {
   font-weight: bold;
   text-align: center;
   background: $yellow;
   color: black;
+  border-color: blue;
 }
-  #citiesTemp{
-    font-size: 20px;
-    display: grid;
-   grid-template-columns: $citiesTemp-width $citiesTemp-width $citiesTemp-width $citiesTemp-width $citiesTemp-width;
-   grid-template-rows: 50px;
-   grid-gap: 3%;
+
+.btn-secondary {
+  border-color: blue;
+}
+
+#submitnew{
+  font-size: 18px;
+  font-weight: bold;
+  color: #4c8bef;
+}
+
+#display {
+  margin-left: 100px;
+  margin-top: 50px;
+  color: blue;
+}
+
+#citiesTemp{
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: $citiesTemp-width $citiesTemp-width $citiesTemp-width $citiesTemp-width $citiesTemp-width;
+  grid-template-rows: 50px;
+  grid-gap: 3%;
+  margin-top: 70px;
+  color: blue;
   }
 
-  #map {
-    height: 50%;
-    width: 50%;
-    margin-left: 100px
+#map {
+  height: 50%;
+  width: 50%;
+  margin-left: 100px
   }
+//styling for gmaps functionality !!!!!!!!!
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#newmap {
+  height: 50%;
+  width: 50%;
+  margin-left: 500px;
+  margin-top: 50px;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#showHumidity {
+  font-size:25px;
+  color: #f48004;
+}
+
+#showKelvinTemp {
+  font-size:25px;
+  color: #f48004;
+}
+
+#showFahrenheitTemp {
+  font-size:25px;
+  color: #f48004;
+}
+
+#showCelsiusTemp {
+  font-size:25px;
+  color: #f48004;
+}

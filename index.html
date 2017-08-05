@@ -4,75 +4,36 @@
     <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-
+    <!-- data for gmaps -->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <!-- data for gmaps -->
     <title>Weather</title>
-
-
-
   </head>
   <body>
+
     <div class="well">
       <h1>Get Weather Conditions From Anywhere!</h1>
-      <label for="location">Enter a location:</label>
-      <input id="location" type="text">
-      <button class="btn-success" id="weather-humidity">Get Current Humidity!</button>
-      <button class="btn-success" id="kelvin-temp">Get Temperature in Kelvin!</button>
-      <button class="btn-success" id="fahrenheit-temp">Convert Temperature to Fahrenheit!</button>
-      <button class="btn-success" id="celsius-temp">Convert Temperature to Celsius!</button>
-
-      <button class="btn-success" id="show-on-map">Show City on Map!</button>
-
+      <label for="location"><h4>Enter a location:</h4></label>
+      <input id="location" type="text" placeholder="Please enter location...">
+      <button type="button" class="btn btn-secondary" id="weather-humidity">Get current humidity</button>
+      <button type="button" class="btn btn-secondary" id="kelvin-temp">Get temperature in Kelvin</button>
+      <button type="button" class="btn btn-secondary" id="fahrenheit-temp">Convert temperature to Fahrenheit</button>
+      <button type="button" class="btn btn-secondary" id="celsius-temp">Convert temperature to Celsius</button>
+      <input id="submitnew" type="button" value="Find your location">
+      <div class="well">
       <div id="showHumidity"></div>
       <div id="showKelvinTemp"></div>
       <div id="showFahrenheitTemp"></div>
       <div id="showCelsiusTemp"></div>
       <div id="citiesTemp"></div>
       </div>
-
- <!-- Display city with converting adress to latitude and longitude-->
-
- <h3>Display city with converting adress to latitude and longitude</h3>
-<br>
- <div id="floating-panel">
-   <input id="address" type="textbox" value="Sydney, NSW">
-   <input id="submit" type="button" value="Geocode">
- </div>
- <br>
-     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-     <meta charset="utf-8">
-     <style>
-       /* Always set the map height explicitly to define the size of the div
-        * element that contains the map. */
-       #newmap {
-         height: 50%;
-         width: 50%;
-         margin-left: 100px;
-       }
-       /* Optional: Makes the sample page fill the window. */
-       html, body {
-         height: 100%;
-         margin: 0;
-         padding: 0;
-       }
-       #floating-panel {
-         position: absolute;
-         top: 10px;
-         left: 25%;
-         z-index: 5;
-         background-color: #fff;
-         padding: 5px;
-         border: 1px solid #999;
-         text-align: center;
-         font-family: 'Roboto','sans-serif';
-         line-height: 30px;
-         padding-left: 10px;
-       }
-     </style>
-   </head>
-   <body>
-
-     <div id="newmap"></div>
-     <script>
+      </div>
+    <!-- data for gmaps -->
+    <div id="display"><h3>Display city with converting adress to latitude and longitude</h3></div>
+  <br>
+  <div id="newmap"></div>
+    <script>
        function initMap() {
          var newmap = new google.maps.Map(document.getElementById('newmap'), {
            zoom: 8,
@@ -80,13 +41,13 @@
          });
          var geocoder = new google.maps.Geocoder();
 
-         document.getElementById('submit').addEventListener('click', function() {
+         document.getElementById('submitnew').addEventListener('click', function() {
            geocodeAddress(geocoder, newmap);
          });
        }
 
        function geocodeAddress(geocoder, resultsMap) {
-         var address = document.getElementById('address').value;
+         var address = document.getElementById('location').value;
          geocoder.geocode({'address': address}, function(results, status) {
            if (status === 'OK') {
              resultsMap.setCenter(results[0].geometry.location);
@@ -99,11 +60,13 @@
            }
          });
        }
-     </script>
+    </script>
      <script async defer
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpB9Q9wfKbEh5d8tmgAm0oEWJmOUlrTM8&callback=initMap">
      </script>
 
+  </body>
+</html>
 
 
 
