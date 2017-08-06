@@ -11,7 +11,6 @@
     <title>Weather</title>
   </head>
   <body>
-
     <div class="well">
       <h1>Get Weather Conditions From Anywhere!</h1>
       <label for="location"><h4>Enter a location:</h4></label>
@@ -28,26 +27,24 @@
       <div id="showCelsiusTemp"></div>
       <div id="citiesTemp"></div>
       </div>
-      </div>
+    </div>
     <!-- data for gmaps -->
     <div id="display"><h3>Display city with converting adress to latitude and longitude:</h3></div>
-  <br>
-  <div id="newmap"></div>
-    <script>
-      var marker = null;
-       function initMap() {
-         var newmap = new google.maps.Map(document.getElementById('newmap'), {
+    <br>
+    <div id="newmap"></div>
+      <script>
+        var marker = null;
+        function initMap() {
+        var newmap = new google.maps.Map(document.getElementById('newmap'), {
            zoom: 8,
            center: {lat: -34.397, lng: 150.644}
          });
-         var geocoder = new google.maps.Geocoder();
-
-         document.getElementById('submitnew').addEventListener('click', function() {
-           geocodeAddress(geocoder, newmap);
-         });
+        var geocoder = new google.maps.Geocoder();
+    document.getElementById('submitnew').addEventListener('click', function() {
+      geocodeAddress(geocoder, newmap);
+        });
        }
-
-       function geocodeAddress(geocoder, resultsMap) {
+      function geocodeAddress(geocoder, resultsMap) {
          var address = document.getElementById('location').value;
          geocoder.geocode({'address': address}, function(results, status) {
            if (status === 'OK') {
@@ -63,19 +60,11 @@
              alert('Geocode was not successful for the following reason: ' + status);
            }
          });
-       }
-
-       function clearMarkers() {
-      geocodeAddress(null);
-     }
-
-
+      }
     </script>
      <script async defer
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpB9Q9wfKbEh5d8tmgAm0oEWJmOUlrTM8&callback=initMap">
      </script>
-
-
   </body>
 </html>
 
