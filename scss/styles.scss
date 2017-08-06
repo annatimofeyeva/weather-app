@@ -29,13 +29,15 @@ h1{
 
 .btn-secondary {
   border-color: blue;
+  font-size: 20px;
 }
 
 #submitnew{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  color: #4c8bef;
-}
+  color: #1b4487;
+  border-color: blue;
+  }
 
 #display {
   margin-left: 100px;
@@ -44,7 +46,7 @@ h1{
 }
 
 #citiesTemp{
-  font-size: 20px;
+  font-size: 25px;
   display: grid;
   grid-template-columns: $citiesTemp-width $citiesTemp-width $citiesTemp-width $citiesTemp-width $citiesTemp-width;
   grid-template-rows: 50px;

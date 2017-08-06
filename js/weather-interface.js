@@ -32,7 +32,7 @@ var getTempIntl = function(location, tempData) {
 };
 
 
-var majorCities = ["Tokyo", "Chelyabinsk", "Seattle", "Moscow", "StPetersburg"];
+var majorCities = ["Tokyo", "Chelyabinsk", "Seattle", "Moscow", "Bellevue"];
 
 $(document).ready(function() {
   var currentWeatherObject = new Weather();
