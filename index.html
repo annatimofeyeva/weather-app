@@ -30,10 +30,11 @@
       </div>
       </div>
     <!-- data for gmaps -->
-    <div id="display"><h3>Display city with converting adress to latitude and longitude</h3></div>
+    <div id="display"><h3>Display city with converting adress to latitude and longitude:</h3></div>
   <br>
   <div id="newmap"></div>
     <script>
+      var marker = null;
        function initMap() {
          var newmap = new google.maps.Map(document.getElementById('newmap'), {
            zoom: 8,
@@ -50,8 +51,11 @@
          var address = document.getElementById('location').value;
          geocoder.geocode({'address': address}, function(results, status) {
            if (status === 'OK') {
+             if (marker) {
+               marker.setMap(null);
+              }
              resultsMap.setCenter(results[0].geometry.location);
-             var marker = new google.maps.Marker({
+             marker = new google.maps.Marker({
                map: resultsMap,
                position: results[0].geometry.location
              });
@@ -60,10 +64,17 @@
            }
          });
        }
+
+       function clearMarkers() {
+      geocodeAddress(null);
+     }
+
+
     </script>
      <script async defer
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpB9Q9wfKbEh5d8tmgAm0oEWJmOUlrTM8&callback=initMap">
      </script>
+
 
   </body>
 </html>
